@@ -1,4 +1,21 @@
-.topbar{
-    height: 70px;
-    background:rgb(67, 139, 206);
+.content{
+    max-width: 1000px;
+    margin-top: 30px;
+}
+
+.profile-container{
+    width: 30%;
+    max-width: 300px;
+}
+
+.b{
+    border: 1px solid red;
+}
+
+.b1{
+    border: 1px solid green;
+}
+
+.btn-tweet{
+    border-radius: 30px;
 }
