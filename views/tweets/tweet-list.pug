@@ -2,5 +2,5 @@ if tweets
     each tweet in tweets
         div(class="card tweet-element")
             div(class="card-body row")
-                div(class="card-text col-11")= tweet.content
+                a(class="card-text col-11" href="/tweets/edit/" +tweet._id)= tweet.content
                 button(class="btn btn-danger float-right" tweetid= tweet._id) X    
