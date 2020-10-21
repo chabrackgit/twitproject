@@ -1,11 +1,28 @@
+const passport = require('passport')
+
 exports.signInForm = (req, res, next)=>{
     res.render('auth/auth-form', {errors: null})
 }
 
 exports.signin = (req, res, next)=>{
-    res.end()
+    passport.authenticate('local', (err, user, info)=>{
+        if(err){
+            next(err)
+        }else if (!user){
+            res.render('auth/auth-form', {errors: [info.message]})
+        }else {
+            req.login(user, (err) => {
+                if(err){
+                    next(e)
+                } else {
+                    res.redirect('/tweets')
+                }
+            })
+        }
+    })(req, res, next)
 }
 
 exports.signout = (req, res, next)=>{
-    res.end()
+    req.logout();
+    res.redirect('/auth/signin/form')
 }
