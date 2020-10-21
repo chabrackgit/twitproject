@@ -15,3 +15,19 @@ exports.createUser = async (user)=>{
         throw e
     }
 }
+
+exports.findUserPerEmail = (email) => {
+    try {
+        return User.findOne({ 'local.email': email}).exec()
+    } catch (e) {
+        throw e
+    }
+}
+
+exports.findUserPerId = (id) => {
+    try {
+        return User.findById(id).exec()
+    } catch (e) {
+        throw e
+    }
+}
