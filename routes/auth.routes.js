@@ -3,6 +3,6 @@ const { signInForm, signin, signout} = require('../controllers/auth.controller')
 
 router.get('/signin/form', signInForm)
 router.post('/signin', signin)
-router.delete('/signout', signout)
+router.get('/signout', signout)
 
 module.exports = router;
