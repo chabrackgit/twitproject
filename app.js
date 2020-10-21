@@ -8,8 +8,12 @@ require ('./database');
 const app = express();
 const port = process.env.PORT || 3000;
 
+exports.app = app
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+require('./config/session.config')
 
 app.use(morgan('short'));
 app.use(express.static(path.join(__dirname,'public')));
@@ -17,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(index);
 
-if(process.env.NODE_ENV ==='development'){
+if(process.env.NODE_ENV === 'development'){
     app.use(errorhandler())
 }else{
     app.use((err, req, res, next)=>{

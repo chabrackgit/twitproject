@@ -1,4 +1,3 @@
-const { create } = require('../database/models/tweet.model');
 const{ getTweets, createTweet, deleteTweet, getTweet, updateTweet } = require('../queries/tweets.queries');
 
 
