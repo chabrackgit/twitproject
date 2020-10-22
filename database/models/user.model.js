@@ -16,7 +16,12 @@ const userSchema  = schema({
     },
     username: {
         type: String,
-        required: true
+        required: true,
+        unique: true
+    },
+    avatar : {
+        type: String,
+        default: '/images/profile.svg'
     }    
 })
 
